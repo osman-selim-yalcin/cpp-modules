@@ -1,11 +1,11 @@
-SRCS			= megaphone.cpp
+SRCS			= main.cpp  HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
-CXX				= clang++
+CXX				= c++
 RM				= rm -f
 CXXFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-NAME			= megaphone
+NAME			= main
 
 all:			$(NAME)
 
