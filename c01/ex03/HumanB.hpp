@@ -6,15 +6,16 @@
 class HumanB
 {
 private:
-	Weapon weapon;
+	Weapon *weapon;
 	string name;
 public:
-	void attack();
-	HumanB(string name);
-	void setWeapon(Weapon weapon);
+	void setWeapon(Weapon &weapon);
 	const string getWeapon();
 	void setName(string name);
 	const string getName();
+	void attack();
+	HumanB(string name);
+	HumanB(string name, Weapon *weapon);
 	~HumanB();
 };
 

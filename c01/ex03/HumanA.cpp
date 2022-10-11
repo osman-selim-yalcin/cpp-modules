@@ -25,10 +25,9 @@ const string HumanA::getName()
 	return (name);
 }
 
-HumanA::HumanA(string name, Weapon &weapon)
+HumanA::HumanA(string name, Weapon &weapon) : weapon(weapon)
 {
 	this->name = name;
-	this->weapon = weapon.getType();
 }
 
 HumanA::~HumanA()

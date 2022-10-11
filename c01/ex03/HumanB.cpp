@@ -2,16 +2,16 @@
 
 void HumanB::attack()
 {
-	cout << name << " attacks with their " << weapon.getType() << endl;
+	cout << name << " attacks with their " << weapon->getType() << endl;
 }
-void HumanB::setWeapon(Weapon weapon)
+void HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon = weapon;
+	this->weapon = &weapon;
 }
 
 const string HumanB::getWeapon()
 {
-	return (weapon.getType());
+	return (weapon->getType());
 }
 
 void HumanB::setName(string name)
@@ -22,6 +22,12 @@ void HumanB::setName(string name)
 const string HumanB::getName()
 {
 	return (name);
+}
+
+HumanB::HumanB(string name, Weapon *weapon)
+{
+	this->weapon = weapon;
+	this->name = name;
 }
 
 HumanB::HumanB(string name)

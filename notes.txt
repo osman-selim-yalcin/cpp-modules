@@ -1,0 +1,3 @@
+c01 ref vs pointer
+
+constructor da ();  :  weapon(weapon)
