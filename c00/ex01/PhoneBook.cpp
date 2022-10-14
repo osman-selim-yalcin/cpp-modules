@@ -49,10 +49,10 @@ void PhoneBook::add()
 	}
 	PhoneBook::contacts[PhoneBook::id].setdarkestsecret(UserInput);
 	cout << "Contact added" << endl;
-	PhoneBook::id++;
-	if (PhoneBook::id == 9)
+	id++;
+	if (id == 9)
 	{
-		PhoneBook::id = 0;	
+		id = 0;	
 	}
 	if (id2 != 9)
 		id2++;
@@ -72,7 +72,9 @@ void PhoneBook::search()
 bool PhoneBook::showid(string command)
 {
 	int a = atoi(command.c_str());
-	if (a > id2 || a < 0)
+	cout << "a" << a << endl;
+	cout << "id" << id2 << endl;
+	if (a >= id2 || a < 0)
 	{
 		return false;
 	}

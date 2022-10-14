@@ -14,7 +14,7 @@ int main(int ac, char **av)
 	size_t a = 0;
 
 	std::ifstream infile (filename);
-	std::fstream newfile;
+	std::ofstream newfile;
 
 	newfile.open(filename + ".replace");
 	if (!infile.is_open())
@@ -35,7 +35,6 @@ int main(int ac, char **av)
 					line.insert(a, s2);
 				}
 			}
-			cout << line << endl;
 			newfile << line;
 			if (infile.tellg() >= 0)
 				newfile << endl;
