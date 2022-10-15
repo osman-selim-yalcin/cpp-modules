@@ -25,10 +25,16 @@ int main()
 		}
 		else if (command == "SEARCH")
 		{
-			PhoneBook.search();
-			getline(cin, command);
-			if (command == "\0" || PhoneBook.isnumber(command) == false || PhoneBook.showid(command) == false)
-				cout << "WRONG INPUT" << endl;
+			if (PhoneBook.getid2() == 0 )
+				cout << "No Contact" << endl;
+			else
+			{
+				PhoneBook.search();
+				getline(cin, command);
+				if (command == "\0" || PhoneBook.isnumber(command) == false || PhoneBook.showid(command) == false)
+					cout << "WRONG INPUT" << endl;
+			}
+			
 		}
 		else
 		{

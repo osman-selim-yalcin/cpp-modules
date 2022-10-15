@@ -16,6 +16,7 @@ class PhoneBook
 		void search();
 		bool isnumber(string);
 		bool showid(string);
+		int getid2();
 };
 
 #endif

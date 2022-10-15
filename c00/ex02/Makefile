@@ -1,4 +1,4 @@
-SRCS			= Account.cpp
+SRCS			= tests.cpp Account.cpp
 OBJS			= $(SRCS:.cpp=.o)
 
 CXX				= c++

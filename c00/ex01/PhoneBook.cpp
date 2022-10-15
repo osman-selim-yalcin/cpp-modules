@@ -50,20 +50,20 @@ void PhoneBook::add()
 	PhoneBook::contacts[PhoneBook::id].setdarkestsecret(UserInput);
 	cout << "Contact added" << endl;
 	id++;
-	if (id == 9)
+	if (id == 8)
 	{
-		id = 0;	
+		id = 0;
 	}
-	if (id2 != 9)
+	if (id2 != 8)
 		id2++;
 }
 
 void PhoneBook::search()
 {
 	cout << "     index|first name| last name|  nickname|" << endl;
-	for (int i = 1; i < id2; i++)
+	for (int i = 0; i < id2; i++)
 	{
-		cout << "         " << i << "|";
+		cout << "         " << i + 1 << "|";
 		PhoneBook::contacts[i].printContact();
 		cout << endl;
 	}
@@ -72,15 +72,17 @@ void PhoneBook::search()
 bool PhoneBook::showid(string command)
 {
 	int a = atoi(command.c_str());
-	cout << "a" << a << endl;
-	cout << "id" << id2 << endl;
-	if (a >= id2 || a < 0)
+	if (a > id2 || a <= 0)
 	{
 		return false;
 	}
-	cout << "         " << a << "|";
-	contacts[a].printContact();
-	cout << endl;
+	cout << "----- information of contact #" << a << " -----"<< endl;
+	a--;
+	cout << "Name:           " << contacts[a].getfirstname() <<endl;
+	cout << "Last Name:      " << contacts[a].getlastname() << endl;
+	cout << "Nickname:       " << contacts[a].getnickname() << endl;
+	cout << "Phone Number:   " << contacts[a].getphonenumber() <<endl;
+	cout << "Darkest Secret: " << contacts[a].getdarkestsecret() <<endl;
 	return true;
 }
 
@@ -94,10 +96,15 @@ bool PhoneBook::isnumber(string command)
 	return true;
 }
 
+int PhoneBook::getid2()
+{
+	return (id2);
+}
+
 PhoneBook::PhoneBook()
 {
-	PhoneBook::id = 1;
-	id2 = 1;
+	PhoneBook::id = 0;
+	id2 = 0;
 }
 
 PhoneBook::~PhoneBook()
