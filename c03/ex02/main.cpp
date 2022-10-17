@@ -1,45 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 14:22:36 by aperez-b          #+#    #+#             */
+/*   Updated: 2022/09/23 14:06:11 by aperez-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-#include <iostream>
+void	alice_rundown(void)
+{
+	FragTrap alice("Alice");
 
-int main() {
-	ScavTrap *c1 = new ScavTrap();
-	FragTrap *c2 = new FragTrap("Zoro");
-	FragTrap *aux = new FragTrap();
-	FragTrap *c3 = new FragTrap(*aux);
+	alice.attack("Bob");
+	alice.attack("Chris");
+	alice.attack("Diana");
+	alice.attack("Elisa");
+	alice.attack("Fred");
+	alice.attack("Gemma");
+	alice.attack("Henry");
+	alice.attack("Isabella");
+	alice.attack("Jack");
+	alice.attack("Kevin");
+	alice.attack("Laura");
+	alice.attack("Mike");
+	alice.highFivesGuys();
+}
 
-	std::cout << std::endl;
+void	bob_rundown(void)
+{
+	FragTrap	bob("Bob");
 
-	c1->attack("Slime");
-	c2->attack("Sanji");
-	c3->attack("Slime shiny");
+	while (bob.get_hp())
+	{
+		bob.takeDamage(20);
+		bob.beRepaired(10);
+	}
+	bob.takeDamage(1);
+	bob.highFivesGuys();
+}
 
-	std::cout << std::endl;
-
-	c1->takeDamage(80);
-	c2->takeDamage(50);
-	c2->takeDamage(50);
-	c3->takeDamage(5);
-
-	std::cout << std::endl;
-
-	c1->beRepaired(1000);
-	c2->beRepaired(1);
-	c3->beRepaired(5);
-
-	std::cout << std::endl;
-
-	c1->guardGate();
-	c2->highFivesGuys();
-	c3->highFivesGuys();
-
-	std::cout << std::endl;
-
-	delete c1;
-	delete c2;
-	delete aux;
-	delete c3;
+int	main(void)
+{
+	std::cout << std::endl << std::endl << "Performing Alice's rundown..." << std::endl << std::endl;
+	alice_rundown();
+	std::cout << std::endl << std::endl << "Performing Bob's rundown..." << std::endl << std::endl;
+	bob_rundown();
 }

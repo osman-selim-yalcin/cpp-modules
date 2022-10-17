@@ -1,9 +1,22 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: osyalcin <osyalcin@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/14 14:11:00 by aperez-b          #+#    #+#              #
+#    Updated: 2022/10/17 14:15:00 by osyalcin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-CC = g++
+CC = c++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-NAME = a.out
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+
+NAME = claptrap
 
 all: $(NAME)
 

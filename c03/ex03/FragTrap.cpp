@@ -1,52 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 17:38:33 by aperez-b          #+#    #+#             */
+/*   Updated: 2022/09/29 15:27:46 by aperez-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-#include <iostream>
-
-FragTrap::FragTrap() {
-	this->_name = "FragTrap";
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
-
-	std::cout << this->_name << " FragTrap created" << std::endl;
+FragTrap::FragTrap(void)
+{
+	std::cout << "FragTrap from ClapTrap " << this->_name << " created with default constructor." << std::endl;
 }
 
-FragTrap::FragTrap(std::string name) {
-	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
-
-	std::cout << this->_name << " FragTrap created" << std::endl;
+FragTrap::FragTrap(std::string const &name): ClapTrap(name)
+{
+	std::cout << "FragTrap from ClapTrap " << this->_name << " created." << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& other) {
-	*this = other;
-
-	std::cout << this->_name << " FragTrap copy created" << std::endl;
+FragTrap::~FragTrap(void)
+{
+	std::cout << "FragTrap from ClapTrap " << this->_name << " destroyed." << std::endl;
 }
 
-FragTrap::~FragTrap() {
-	std::cout << this->_name << " FragTrap destroyed" << std::endl;
+FragTrap::FragTrap(FragTrap const &copy): ClapTrap(copy)
+{
+	std::cout << "FragTrap from ClapTrap " << this->_name << " copied." << std::endl;
 }
 
-FragTrap& FragTrap::operator=(const FragTrap& other) {
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-
-	std::cout << this->_name << " FragTrap = " << other._name << std::endl;
-
-	return *this;
+FragTrap	&FragTrap::operator=(FragTrap const &copy)
+{
+	std::cout << "Assignment operator for FragTrap called." << std::endl;
+	ClapTrap::operator=(copy);
+	return (*this);
 }
 
-void FragTrap::highFivesGuys() {
-	if (this->_hitPoints == 0) {
-		std::cout << this->_name << " FragTrap can't hight fives because is dead" << std::endl;
-		return;
-	}
-
-	std::cout << this->_name << " FragTrap hight fives guys!!!" << std::endl;
+void	FragTrap::highFivesGuys(void)
+{
+	if (this->_hp <= 0)
+		std::cout << "Cannot high five because: ClapTrap " << this->_name << " is dead." << std::endl;
+	else
+		std::cout << "FragTrap from ClapTrap " << this->_name << " says: \"HIGH FIVE EVERYONE! :)\"." << std::endl;
 }

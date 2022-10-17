@@ -1,33 +1,40 @@
+
 #include "ClapTrap.hpp"
 
-int main() {
-	ClapTrap *c1 = new ClapTrap();
-	ClapTrap *c2 = new ClapTrap("Zoro");
-	ClapTrap *c3 = new ClapTrap(*c1);
+void	alice_rundown(void)
+{
+	ClapTrap alice("Alice");
 
-	std::cout << std::endl;
+	alice.attack("Bob");
+	alice.attack("Chris");
+	alice.attack("Diana");
+	alice.attack("Elisa");
+	alice.attack("Fred");
+	alice.attack("Gemma");
+	alice.attack("Henry");
+	alice.attack("Isabella");
+	alice.attack("Jack");
+	alice.attack("Kevin");
+	alice.attack("Laura");
+	alice.attack("Mike");
+}
 
-	c1->attack("Slime");
-	c2->attack("Sanji");
-	c3->attack("Slime shiny");
+void	bob_rundown(void)
+{
+	ClapTrap	bob("Bob");
 
-	std::cout << std::endl;
+	while (bob.get_hp())
+	{
+		bob.takeDamage(2);
+		bob.beRepaired(2);
+	}
+	bob.takeDamage(1);
+}
 
-	c1->takeDamage(80);
-	c2->takeDamage(5);
-	c2->takeDamage(5);
-	c2->takeDamage(5);
-	c3->takeDamage(5);
-
-	std::cout << std::endl;
-
-	c1->beRepaired(1000);
-	c2->beRepaired(1);
-	c3->beRepaired(5);
-
-	std::cout << std::endl;
-
-	delete c1;
-	delete c2;
-	delete c3;
+int	main(void)
+{
+	std::cout << std::endl << std::endl << "Performing Alice's rundown..." << std::endl << std::endl;
+	alice_rundown();
+	std::cout << std::endl << std::endl << "Performing Bob's rundown..." << std::endl << std::endl;
+	bob_rundown();
 }

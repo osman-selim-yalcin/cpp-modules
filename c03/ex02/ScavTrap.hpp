@@ -1,22 +1,35 @@
-#ifndef EX02_SCAVTRAP_HPP_
-# define EX02_SCAVTRAP_HPP_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 17:37:20 by aperez-b          #+#    #+#             */
+/*   Updated: 2022/09/23 13:33:37 by aperez-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
 
-#include <string>
+# define SCAVTRAP_HPP
 
-class ScavTrap : public ClapTrap {
+# include "ClapTrap.hpp"
+
+class ScavTrap: public ClapTrap
+{
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap& other);
-		~ScavTrap();
+		/* Constructors & Destructors */
+		ScavTrap(void);
+		ScavTrap(std::string const &name);
+		ScavTrap(ScavTrap const &copy);
+		~ScavTrap(void);
 
-		ScavTrap& operator=(const ScavTrap& other);
+		/* Basic Operators */
+		ScavTrap	&operator=(ScavTrap const &copy);
 
-		void attack(const std::string& target);
-		void guardGate();
-	private:
+		/* Main Member Functions */
+		void	guardGate(void);
 };
 
 #endif

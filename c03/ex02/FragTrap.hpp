@@ -1,22 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 17:37:20 by aperez-b          #+#    #+#             */
+/*   Updated: 2022/09/23 14:04:53 by aperez-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef EX02_FRAGTRAP_HPP_
-# define EX02_FRAGTRAP_HPP_
+#ifndef FRAGTRAP_HPP
+
+# define FRAGTRAP_HPP
 
 # include "ClapTrap.hpp"
 
-# include <string>
-
-class FragTrap : public ClapTrap {
+class FragTrap: public ClapTrap
+{
 	public:
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(const FragTrap& other);
-		~FragTrap();
+		/* Constructors & Destructors */
+		FragTrap(void);
+		FragTrap(std::string const &name);
+		FragTrap(FragTrap const &copy);
+		~FragTrap(void);
 
-		FragTrap& operator=(const FragTrap& other);
+		/* Basic Operators */
+		FragTrap	&operator=(FragTrap const &copy);
 
-		void highFivesGuys();
-	private:
+		/* Main Member Functions */
+		void	highFivesGuys(void);
 };
 
 #endif

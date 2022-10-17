@@ -1,64 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 17:38:33 by aperez-b          #+#    #+#             */
+/*   Updated: 2022/09/29 15:27:26 by aperez-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-#include <iostream>
-
-ScavTrap::ScavTrap() {
-	this->_name = "Default";
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_hitPoints = 20;
-
-	std::cout << this->_name << " ScavTrap created" << std::endl;
+ScavTrap::ScavTrap(void)
+{
+	std::cout << "ScavTrap from ClapTrap " << this->_name << " created with default constructor." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name) {
-	this->_name = name;
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_hitPoints = 20;
-
-	std::cout << this->_name << " ScavTrap created" << std::endl;
+ScavTrap::ScavTrap(std::string const &name): ClapTrap(name)
+{
+	std::cout << "ScavTrap from ClapTrap " << this->_name << " created." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& other) {
-	*this = other;
-
-	std::cout << this->_name << " ScavTrap copy created" << std::endl;
+ScavTrap::~ScavTrap(void)
+{
+	std::cout << "ScavTrap from ClapTrap " << this->_name << " destroyed." << std::endl;
 }
 
-ScavTrap::~ScavTrap() {
-	std::cout << this->_name << " ScavTrap destroyed" << std::endl;
+ScavTrap::ScavTrap(ScavTrap const &copy): ClapTrap(copy)
+{
+	std::cout << "ScavTrap from ClapTrap " << this->_name << " copied." << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
-	this->_name = other._name;
-	this->_hitPoints = other._hitPoints;
-	this->_energyPoints = other._energyPoints;
-	this->_attackDamage = other._attackDamage;
-
-	std::cout << this->_name << " ScavTrap = " << other._name << std::endl;
-
-	return *this;
+ScavTrap	&ScavTrap::operator=(ScavTrap const &copy)
+{
+	std::cout << "Assignment operator for ScavTrap called." << std::endl;
+	ClapTrap::operator=(copy);
+	return (*this);
 }
 
-void ScavTrap::attack(const std::string& target) {
-	if (this->_hitPoints == 0) {
-		std::cout << this->_name << " ScavTrap can't attack because is dead" << std::endl;
-		return;
-	}
-
-	std::cout
-		<< this->_name << " ScavTrap attack " << target
-		<< ", causing " << this->_attackDamage << " damage"
-		<< std::endl;
-}
-
-void ScavTrap::guardGate() {
-	if (this->_hitPoints == 0) {
-		std::cout << this->_name << " ScavTrap can't guard gate because is dead" << std::endl;
-		return;
-	}
-
-	std::cout << this->_name << " ScavTrap is now guarding the gate" << std::endl;
+void	ScavTrap::guardGate(void)
+{
+	if (this->_hp <= 0)
+		std::cout << "Cannot switch to gate-keeper mode because: ClapTrap " << this->_name << " is dead." << std::endl;
+	else
+		std::cout << "ScavTrap from ClapTrap " << this->_name << " switched to mode: \"Guard Gate\"." << std::endl;
 }

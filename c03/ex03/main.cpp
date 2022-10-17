@@ -1,53 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/22 14:22:36 by aperez-b          #+#    #+#             */
+/*   Updated: 2022/09/23 15:31:30 by aperez-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
-#include <iostream>
+void	alice_rundown(void)
+{
+	DiamondTrap alice("Alice");
 
-int main() {
-	ScavTrap *c1 = new ScavTrap();
-	DiamondTrap *c2 = new DiamondTrap("Zoro");
-	DiamondTrap *aux = new DiamondTrap();
-	DiamondTrap *c3 = new DiamondTrap(*aux);
+	alice.attack("Bob");
+	alice.attack("Chris");
+	alice.attack("Diana");
+	alice.attack("Elisa");
+	alice.attack("Fred");
+	alice.attack("Gemma");
+	alice.attack("Henry");
+	alice.attack("Isabella");
+	alice.attack("Jack");
+	alice.attack("Kevin");
+	alice.attack("Laura");
+	alice.attack("Mike");
+	alice.guardGate();
+	alice.highFivesGuys();
+	alice.whoAmI();
+}
 
-	std::cout << std::endl;
+void	bob_rundown(void)
+{
+	DiamondTrap	bob("Bob");
 
-	c1->attack("Slime");
-	c2->attack("Sanji");
-	c3->attack("Slime shiny");
+	while (bob.get_hp())
+	{
+		bob.takeDamage(20);
+		bob.beRepaired(10);
+	}
+	bob.takeDamage(1);
+	bob.guardGate();
+	bob.highFivesGuys();
+	bob.whoAmI();
+}
 
-	std::cout << std::endl;
-
-	c1->takeDamage(80);
-	c2->takeDamage(50);
-	c2->takeDamage(50);
-	c3->takeDamage(5);
-
-	std::cout << std::endl;
-
-	c1->beRepaired(1000);
-	c2->beRepaired(1);
-	c3->beRepaired(5);
-
-	std::cout << std::endl;
-
-	c1->guardGate();
-
-	c2->guardGate();
-	c3->guardGate();
-
-	c2->highFivesGuys();
-	c3->highFivesGuys();
-
-	c2->whoAmI();
-	c3->whoAmI();
-
-	std::cout << std::endl;
-
-	delete c1;
-	delete c2;
-	delete aux;
-	delete c3;
+int	main(void)
+{
+	std::cout << std::endl << std::endl << "Performing Alice's rundown..." << std::endl << std::endl;
+	alice_rundown();
+	std::cout << std::endl << std::endl << "Performing Bob's rundown..." << std::endl << std::endl;
+	bob_rundown();
 }
