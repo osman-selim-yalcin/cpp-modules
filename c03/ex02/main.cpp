@@ -1,15 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:22:36 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/23 14:06:11 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 void	alice_rundown(void)
@@ -44,10 +34,24 @@ void	bob_rundown(void)
 	bob.highFivesGuys();
 }
 
+void	osman_rundown(void)
+{
+	ClapTrap	osman("osman");
+	ScavTrap	burak("burak");
+
+	osman.attack("burak");
+	osman.takeDamage(20);
+	osman.beRepaired(10);
+	osman.takeDamage(1);
+	burak.attack("osman");
+}
+
 int	main(void)
 {
 	std::cout << std::endl << std::endl << "Performing Alice's rundown..." << std::endl << std::endl;
 	alice_rundown();
 	std::cout << std::endl << std::endl << "Performing Bob's rundown..." << std::endl << std::endl;
 	bob_rundown();
+	std::cout << std::endl << std::endl << "Performing osman's rundown..." << std::endl << std::endl;
+	osman_rundown();
 }
