@@ -1,18 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:04:48 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/23 14:43:08 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #pragma once
 
-# include "FragTrap.hpp"
+#include "FragTrap.hpp"
 
 class DiamondTrap: public ScavTrap, public FragTrap
 {

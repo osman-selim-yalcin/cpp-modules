@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:22:36 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/23 15:31:30 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "DiamondTrap.hpp"
 
 void	alice_rundown(void)
@@ -28,14 +16,12 @@ void	alice_rundown(void)
 	alice.attack("Kevin");
 	alice.attack("Laura");
 	alice.attack("Mike");
-	alice.guardGate();
 	alice.highFivesGuys();
-	alice.whoAmI();
 }
 
 void	bob_rundown(void)
 {
-	DiamondTrap	bob("Bob");
+	FragTrap	bob("Bob");
 
 	while (bob.get_hp())
 	{
@@ -43,9 +29,19 @@ void	bob_rundown(void)
 		bob.beRepaired(10);
 	}
 	bob.takeDamage(1);
-	bob.guardGate();
 	bob.highFivesGuys();
-	bob.whoAmI();
+}
+
+void	osman_rundown(void)
+{
+	ClapTrap	osman("osman");
+	ScavTrap	burak("burak");
+
+	osman.attack("burak");
+	osman.takeDamage(20);
+	osman.beRepaired(10);
+	osman.takeDamage(1);
+	burak.attack("osman");
 }
 
 int	main(void)
@@ -54,4 +50,6 @@ int	main(void)
 	alice_rundown();
 	std::cout << std::endl << std::endl << "Performing Bob's rundown..." << std::endl << std::endl;
 	bob_rundown();
+	std::cout << std::endl << std::endl << "Performing osman's rundown..." << std::endl << std::endl;
+	osman_rundown();
 }

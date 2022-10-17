@@ -1,23 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:14:48 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/29 15:27:40 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void): _name("default"), _hp(100), _energy_points(100), _damage(30)
+ClapTrap::ClapTrap(void): _name("default"), _hp(10), _energy_points(10), _damage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " created with default constructor." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string const &name): _name(name), _hp(100), _energy_points(100), _damage(30)
+ClapTrap::ClapTrap(std::string const &name): _name(name), _hp(10), _energy_points(10), _damage(0)
 {
 	std::cout << "ClapTrap " << this->_name << " created." << std::endl;
 }
@@ -76,7 +65,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &copy)
 {
-	std::cout << "Assignment operator For ClapTrap called." << std::endl;
+	std::cout << "Assignment operator for ClapTrap called." << std::endl;
 	this->_name = copy.get_name();
 	this->_hp = copy.get_hp();
 	this->_energy_points = copy.get_energy_points();

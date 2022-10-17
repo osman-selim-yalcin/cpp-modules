@@ -1,24 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 17:38:33 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/29 15:27:46 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void)
 {
+	this->set_name("Default");
+	this->set_damage(30);
+	this->set_energy_points(100);
+	this->set_hp(100);
 	std::cout << "FragTrap from ClapTrap " << this->_name << " created with default constructor." << std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name): ClapTrap(name)
+FragTrap::FragTrap(std::string const &name)
 {
+	this->set_name(name);
+	this->set_damage(30);
+	this->set_energy_points(100);
+	this->set_hp(100);
 	std::cout << "FragTrap from ClapTrap " << this->_name << " created." << std::endl;
 }
 

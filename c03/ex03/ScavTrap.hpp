@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 17:37:20 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/23 14:33:06 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 
@@ -16,7 +5,7 @@
 
 # include "ClapTrap.hpp"
 
-class ScavTrap: public virtual ClapTrap
+class ScavTrap: public ClapTrap
 {
 	public:
 		/* Constructors & Destructors */
@@ -30,6 +19,7 @@ class ScavTrap: public virtual ClapTrap
 
 		/* Main Member Functions */
 		void	guardGate(void);
+		void	attack(std::string const &target); //yaz bunu
 };
 
 #endif
