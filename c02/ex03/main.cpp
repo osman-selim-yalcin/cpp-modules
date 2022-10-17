@@ -39,16 +39,16 @@ int main(void)
 		Point c(Fixed(), Fixed(1));
 		Point p(Fixed(), Fixed(0.5f));
 		std::cout << "1. " << (bsp(a, b, c, p) ? "true" : "false") << std::endl; // 1. true
-		std::cout << "2. " << (bsp(a, b, c, a) ? "true" : "false") << std::endl; // 2. false
-		std::cout << "3. " << (bsp(a, b, c, b) ? "true" : "false") << std::endl; // 3. false
-		std::cout << "4. " << (bsp(a, b, c, c) ? "true" : "false") << std::endl; // 4. false
 	}
-	// {	
-	// 	Point a (1,1);
-	// 	Point b (2,5);
-	// 	Point c (5,4);
-	// 	Point p (4,2); //4,2;
-	// 	bsp(a,b,c,p);
-	// }
+	std::cout << "\nTEST BASIC:" << std::endl;
+	{	
+		Point a (1,1);
+		Point b (2,5);
+		Point c (5,4);
+		Point p (4,2);
+		Point p2 (2,3);
+		std::cout << "1. " << (bsp(a, b, c, p) ? "true" : "false") << std::endl; // 1. false
+		std::cout << "2. " << (bsp(a, b, c, p2) ? "true" : "false") << std::endl; // 2. true
+	}
 	return (0);
 }
