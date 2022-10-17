@@ -1,9 +1,8 @@
-SRC = main.cpp Fixed.cpp
+SRC = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamonTrap.cpp
 OBJ = $(SRC:.cpp=.o)
-CC = c++
+CC = g++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
-
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = a.out
 
 all: $(NAME)

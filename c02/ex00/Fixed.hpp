@@ -15,7 +15,7 @@ class Fixed
 {
 private:
 	int rawBit;
-	static const int frac;
+	static const int frac = 8;
 public:
 	Fixed();
 	Fixed(const Fixed &copy);

@@ -24,6 +24,7 @@ Fixed::Fixed()
 
 Fixed::~Fixed()
 {
+	cout << "Destructor called" << endl;
 }
 
 int Fixed::getRawBits() const

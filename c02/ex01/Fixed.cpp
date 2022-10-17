@@ -64,5 +64,6 @@ Fixed::Fixed()
 
 Fixed::~Fixed()
 {
+	cout << "Destructor called" << endl;
 }
 
