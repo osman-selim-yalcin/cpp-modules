@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:09:15 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/23 13:22:02 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 
@@ -28,10 +17,10 @@ class ClapTrap
 		ClapTrap(void);
 		ClapTrap(std::string const &name);
 		ClapTrap(ClapTrap const &copy);
-		~ClapTrap(void);
+		virtual ~ClapTrap(void);
 		
 		/* Main Member Functions */
-		void	attack(std::string const &target);
+		virtual void	attack(std::string const &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 

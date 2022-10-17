@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aperez-b <aperez-b@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:22:36 by aperez-b          #+#    #+#             */
-/*   Updated: 2022/09/23 12:55:27 by aperez-b         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
@@ -44,10 +33,25 @@ void	bob_rundown(void)
 	bob.guardGate();
 }
 
+void	osman_rundown(void)
+{
+	ClapTrap	osman("osman");
+
+	osman.attack("burak");
+	while (osman.get_hp())
+	{
+		osman.takeDamage(20);
+		osman.beRepaired(10);
+	}
+	osman.takeDamage(1);
+}
+
 int	main(void)
 {
 	std::cout << std::endl << std::endl << "Performing Alice's rundown..." << std::endl << std::endl;
 	alice_rundown();
 	std::cout << std::endl << std::endl << "Performing Bob's rundown..." << std::endl << std::endl;
 	bob_rundown();
+	std::cout << std::endl << std::endl << "Performing osman's rundown..." << std::endl << std::endl;
+	osman_rundown();
 }
