@@ -15,7 +15,6 @@ public:
 	const string getName();
 	void attack();
 	HumanB(string name);
-	HumanB(string name, Weapon *weapon);
 	~HumanB();
 };
 

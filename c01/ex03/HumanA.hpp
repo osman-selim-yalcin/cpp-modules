@@ -6,11 +6,11 @@
 class HumanA
 {
 private:
-	Weapon *weapon;
+	Weapon &weapon;
 	string name;
 public:
 	HumanA(string name, Weapon &weapon);
-	void setWeapon(Weapon *weapon);
+	void setWeapon(Weapon &weapon2);
 	const string getWeapon();
 	void setName(string name);
 	const string getName();

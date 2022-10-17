@@ -24,12 +24,6 @@ const string HumanB::getName()
 	return (name);
 }
 
-HumanB::HumanB(string name, Weapon *weapon)
-{
-	this->weapon = weapon;
-	this->name = name;
-}
-
 HumanB::HumanB(string name)
 {
 	this->name = name;
