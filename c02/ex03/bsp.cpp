@@ -1,8 +1,8 @@
 #include "Point.hpp"
 
-Fixed side (const Point p, const Point p1, const Point p2) {
+float side (const Point p, const Point p1, const Point p2) {
 	return (p2.gety() - p1.gety()) * (p.getx() - p1.getx())
-		+ ((p2.getx() * -1) + p1.getx()) * (p.gety() - p1.gety());
+		+ (p1.getx() - p2.getx()) * (p.gety() - p1.gety());
 }
 
 bool bsp(const Point a, const Point b, const Point c, const Point point) {
