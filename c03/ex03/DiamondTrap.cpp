@@ -3,6 +3,9 @@
 DiamondTrap::DiamondTrap(void)
 {
 	ClapTrap::_name = "default_clap_name";
+	this->_hp = FragTrap::_hp;
+	this->_energy_points = ScavTrap::_energy_points;
+	this->_damage = FragTrap::_damage;
 	std::cout << "DiamondTrap " << this->_name << " created with default constructor." << std::endl;
 }
 

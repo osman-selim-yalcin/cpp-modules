@@ -19,7 +19,7 @@ class ScavTrap: public ClapTrap
 
 		/* Main Member Functions */
 		void	guardGate(void);
-		void	attack(std::string const &target); //yaz bunu
-};
+		void	attack(std::string const &target);
+	};
 
 #endif
