@@ -56,5 +56,8 @@ int	main(void)
 	std::cout << "-------------*" <<std::endl;
 	wow.whoAmI();
 	wow.attack("osman");
+	DiamondTrap wow2 = wow;
+	wow2.whoAmI();
+	wow2.attack("burak");
 	std::cout << "-------------" <<std::endl;
 }
