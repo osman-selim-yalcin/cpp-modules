@@ -1,25 +1,15 @@
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef CAT_HPP_
+# define CAT_HPP_
 
-#include <string>
-#include <iostream>
+#include "Animal.hpp"
 
-using std::endl;
-using std::cout;
-using std::string;
-using std::cin;
-using std::getline;
-
-class Cat
-{
-	protected:
-		string type;
+class Cat : public Animal {
 	public:
 		Cat();
-		Cat(const Cat&copy);
-		Cat &operator=(const Cat &other);
-		virtual ~Cat();
-		virtual void makeSound();
+		Cat(const Cat& other);
+		~Cat();
+
+		void makeSound() const;
 };
 
 #endif

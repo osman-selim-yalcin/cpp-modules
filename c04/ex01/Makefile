@@ -1,4 +1,4 @@
-SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRC = main.cpp Cat.cpp Dog.cpp Animal.cpp Brain.cpp Human.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 RM = rm -f
