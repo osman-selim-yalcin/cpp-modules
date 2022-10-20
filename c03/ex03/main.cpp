@@ -52,4 +52,9 @@ int	main(void)
 	bob_rundown();
 	std::cout << std::endl << std::endl << "Performing osman's rundown..." << std::endl << std::endl;
 	osman_rundown();
+	DiamondTrap wow ("ali");
+	std::cout << "-------------*" <<std::endl;
+	wow.whoAmI();
+	wow.attack("osman");
+	std::cout << "-------------" <<std::endl;
 }

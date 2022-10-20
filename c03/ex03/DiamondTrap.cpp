@@ -3,15 +3,17 @@
 DiamondTrap::DiamondTrap(void)
 {
 	ClapTrap::_name = "default_clap_name";
+	this->name = "default";
 	this->_hp = FragTrap::_hp;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_damage = FragTrap::_damage;
 	std::cout << "DiamondTrap " << this->_name << " created with default constructor." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string const &name): ClapTrap(name + "_clap_name")
+DiamondTrap::DiamondTrap(std::string const &name)
 {
-	this->_name = name;
+	ClapTrap::_name = name + "_clap_name";
+	this->name = name;
 	this->_hp = FragTrap::_hp;
 	this->_energy_points = ScavTrap::_energy_points;
 	this->_damage = FragTrap::_damage;
@@ -41,7 +43,7 @@ void	DiamondTrap::whoAmI(void)
 		std::cout << "Cannot run whoAmI because: DiamondTrap " << this->_name << " is dead." << std::endl;
 	else
 	{
-		std::cout << "DiamondTrap name: " << this->_name << "." << std::endl;
+		std::cout << "DiamondTrap name: " << this->name << "." << std::endl;
 		std::cout << "ClapTrap name: " << ClapTrap::_name << "." << std::endl;
 	}
 }
