@@ -3,7 +3,7 @@
 #include <iostream>
 
 WrongAnimal::WrongAnimal()
-		: type("Animal") {
+{
 	std::cout << "WrongAnimal: Default constructor" << std::endl;
 }
 
@@ -26,7 +26,7 @@ WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other) {
 }
 
 void WrongAnimal::makeSound() const {
-	std::cout << "\"Animal generic sound\"" << std::endl;
+	std::cout << "WrongAnimal generic sound" << std::endl;
 }
 
 const std::string& WrongAnimal::getType() const {

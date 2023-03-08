@@ -1,21 +1,7 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dpoveda- <me@izenynn.com>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 12:54:19 by dpoveda-          #+#    #+#             */
-/*   Updated: 2022/02/16 15:54:59 by dpoveda-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "Animal.hpp"
 
-#include <iostream>
-
-Animal::Animal()
-		: type("Animal") {
+Animal::Animal() : type("Animal")
+{
 	std::cout << "Animal: Default constructor" << std::endl;
 }
 
@@ -38,7 +24,7 @@ Animal& Animal::operator=(const Animal& other) {
 }
 
 void Animal::makeSound() const {
-	std::cout << "\"Animal generic sound\"" << std::endl;
+	std::cout << "Animal generic sound" << std::endl;
 }
 
 const std::string& Animal::getType() const {

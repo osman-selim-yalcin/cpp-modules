@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-Animal::Animal()
-		: type("Animal") {
+Animal::Animal() : type("Animal")
+{
 	std::cout << "Animal: Default constructor" << std::endl;
 }
 
@@ -26,7 +26,7 @@ Animal& Animal::operator=(const Animal& other) {
 }
 
 void Animal::makeSound() const {
-	std::cout << "\"Animal generic sound\"" << std::endl;
+	std::cout << "Animal generic sound" << std::endl;
 }
 
 const std::string& Animal::getType() const {

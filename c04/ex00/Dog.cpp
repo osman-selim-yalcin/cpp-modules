@@ -14,6 +14,14 @@ Dog::Dog(const Dog& other) {
 	std::cout << "Dog: Copy constructor" << std::endl;
 }
 
+Dog& Dog::operator=(const Dog& other) {
+	this->type = other.type;
+
+	std::cout << "Dog: Assignation operator" << std::endl;
+
+	return *this;
+}
+
 Dog::~Dog() {
 	std::cout << "Dog: Destructor" << std::endl;
 }

@@ -3,7 +3,7 @@
 #include <iostream>
 
 WrongCat::WrongCat() {
-	this->type = "Cat";
+	this->type = "WrongCat";
 
 	std::cout << "WrongCat: Default constructor" << std::endl;
 }
