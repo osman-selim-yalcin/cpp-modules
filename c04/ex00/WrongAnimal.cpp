@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal()  : type("Animal")
 {
 	std::cout << "WrongAnimal: Default constructor" << std::endl;
 }

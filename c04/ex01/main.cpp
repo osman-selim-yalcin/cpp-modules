@@ -6,7 +6,7 @@
 /*   By: osmanyalcin <osmanyalcin@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 13:22:05 by dpoveda-          #+#    #+#             */
-/*   Updated: 2023/03/08 15:40:53 by osmanyalcin      ###   ########.fr       */
+/*   Updated: 2023/04/18 22:50:29 by osmanyalcin      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main( void )
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    delete j;//should not create a leak
+    delete j;
     delete i;
 	
 	std::cout << "------------------------" << std::endl;

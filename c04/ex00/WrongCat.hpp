@@ -8,6 +8,8 @@ class WrongCat : public WrongAnimal {
 		WrongCat();
 		WrongCat(const WrongCat& other);
 		~WrongCat();
+		
+		WrongCat& operator=(const WrongCat& other);
 
 		void makeSound() const;
 };
